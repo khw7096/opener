@@ -1,8 +1,8 @@
 from ttk import *
 from Tkinter import *
 import Pmw
-import lazypath
-import lazyrun
+import path
+import run
 import os
 
 class Opener(Frame):
@@ -12,9 +12,9 @@ class Opener(Frame):
 	shot = ""
 	file = ""
 	try:
-		projectlist = lazypath.projectlist()
+		projectlist = path.projectlist()
 	except:
-		lazypath.setproject("temp")
+		path.setproject("temp")
 	shotlist = []
 	tasklist = ["2d", "3d", "plate"]
 	filelist = []
@@ -82,7 +82,7 @@ class Opener(Frame):
 		window.destroy()
 
 	def make_project(self, projectname, window):
-		lazypath.setproject(projectname)
+		path.setproject(projectname)
 		window.destroy()
 		self.update_project()
 	
@@ -98,7 +98,7 @@ class Opener(Frame):
 		nbutton.grid(row=1, column=1, padx=5, pady=5, sticky='W')
 	
 	def make_shot(self, shotname, window):
-		lazypath.setshot(self.project, shotname)
+		path.setshot(self.project, shotname)
 		window.destroy()
 		self.update_shot()
 
@@ -136,28 +136,28 @@ class Opener(Frame):
 		else:
 			self.file = sels[0]
 		self.update_path()
-		runfile = lazypath.PROJECTROOT + self.project + "/seq/" + self.shot +"/"+ self.task +"/"+ self.file
-		lazyrun.run(runfile)
+		runfile = path.PROJECTROOT +"/"+ self.project + "/seq/" + self.shot +"/"+ self.task +"/"+ self.file
+		run.run(runfile)
 
 	def update_project(self):
 		self.ui_projectlist.clear()
-		self.ui_projectlist.setlist(lazypath.projectlist())
+		self.ui_projectlist.setlist(path.projectlist())
 
 	def update_shot(self):
 		self.ui_shotlist.clear()
-		self.ui_shotlist.setlist(lazypath.seqlist(self.project))
+		self.ui_shotlist.setlist(path.seqlist(self.project))
 
 	def update_task(self):
 		pass
 	
 	def update_file(self):
 		self.ui_filelist.clear()
-		self.ui_filelist.setlist(lazypath.filelist(self.project, self.shot, self.task))
+		self.ui_filelist.setlist(path.filelist(self.project, self.shot, self.task))
 	
 	def update_path(self):
 		try:
-			self.pathvar.set("PATH : ~/lazypic/show/%s/seq/%s/%s" % (self.project, self.shot, self.task))
-			self.open_pathvar = "%s%s/seq/%s/%s" % (lazypath.PROJECTROOT, self.project, self.shot, self.task) 
+			self.pathvar.set("PATH : %s/%s/seq/%s/%s" % (path.PROJECTROOT, self.project, self.shot, self.task))
+			self.open_pathvar = "%s/%s/seq/%s/%s" % (path.PROJECTROOT, self.project, self.shot, self.task) 
 		except:
 			self.pathvar.set("Select Shot please~!")
 

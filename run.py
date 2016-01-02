@@ -13,7 +13,6 @@ def getext(path):
 
 def run(filepath):
 	ext = getext(filepath)
-	
 	if ext == "nk":
 		nukepath = "/Applications/Nuke6.3v4/Nuke6.3v4.app/Contents/MacOS/Nuke6.3v4 --nukex"
 		excute("%s %s" % (nukepath, filepath))
