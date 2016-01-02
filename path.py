@@ -23,10 +23,6 @@ def projectlist():
 	for i in os.listdir(ROOT):
 		if os.path.isdir(ROOT +"/"+ i):
 			rlist.append(i)
-	try:
-		rlist.remove("backup")
-	except:
-		pass
 	return rlist
 
 def seqlist(project):
