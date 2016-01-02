@@ -6,7 +6,6 @@ import run
 import os
 
 class Opener(Frame):
-	
 	project = ""
 	task = "2d"
 	shot = ""

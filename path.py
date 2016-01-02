@@ -2,7 +2,7 @@ import os
 import time
 import sys
 
-ROOT = "%s/project" % (os.path.expanduser("~"))
+ROOT = "%s/show" % (os.path.expanduser("~"))
 
 def setproject(project):
 	subfolder = ["seq", "product/sound", "product/in", "product/out", "product/scan", "temp"]
