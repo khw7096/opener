@@ -165,7 +165,7 @@ def main():
 	root = Tk()
 	p = Opener(root)
 	root.title("Opener")
-	root.geometry("500x390+300+300")
+	root.geometry("560x390+300+300")
 	root.mainloop()
 
 if __name__ == "__main__":

@@ -16,7 +16,7 @@ def setshot(project, shotname):
 		for i in subfolder:
 			os.system("mkdir -p %s/seq/%s/%s" % (projd, shotname, i))
 		os.system("touch %s/seq/%s/2d/%s" % (projd, shotname, shotname + "_comp_v01.nk"))
-		#os.system("cp ~/lazypic/tool/config/initfile/init.blend %s/seq/%s/3d/%s" % (projd, shotname, shotname + "_blender_v01.blend"))
+		os.system("cp %s/initfile/init.blend %s/seq/%s/3d/%s" % (os.path.abspath(os.path.dirname(__file__)),projd, shotname, shotname + "_blender_v01.blend"))
 
 def checkos():
 	if sys.platform == 'linux2':
