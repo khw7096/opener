@@ -46,17 +46,20 @@ def seqlist(project):
 
 def filelist(project, seq, task):
 	flist = []
-	for i in os.listdir("%s/%s/seq/%s/%s" % (ROOT, project, seq, task)):
-		if os.path.isfile("%s/%s/seq/%s/%s/%s" % (ROOT, project, seq, task, i)):
-			if i[0] == ".":
-				pass
-			elif "~" in i:
-				pass
-			elif i.rsplit(".",1)[1] == "autosave":
-				pass
-			else:
-				flist.append(i)
-	return flist
+	if os.path.isdir("%s/%s/seq/%s/%s" % (ROOT, project, seq, task)):
+		for i in os.listdir("%s/%s/seq/%s/%s" % (ROOT, project, seq, task)):
+			if os.path.isfile("%s/%s/seq/%s/%s/%s" % (ROOT, project, seq, task, i)):
+				if i[0] == ".":
+					pass
+				elif "~" in i:
+					pass
+				elif i.rsplit(".",1)[1] == "autosave":
+					pass
+				else:
+					flist.append(i)
+		return flist
+	else:
+		return flist	
 
 
 def rmdot(list):
