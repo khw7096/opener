@@ -2,7 +2,10 @@
 - simple file managing tool for onset.
 - always testing version.
 
-# need
+## reference.
+- http://zetcode.com/gui/tkinter/dialogs
+
+## need.
 - pmw
 ```
 wget http://sourceforge.net/projects/pmw/files/Pmw-2.0.0.tar.gz
