@@ -2,15 +2,15 @@ import os
 import time
 import sys
 
-PROJECTROOT = "%s/project" % (os.path.expanduser("~"))
+ROOT = "%s/project" % (os.path.expanduser("~"))
 
 def setproject(project):
 	subfolder = ["seq", "product/sound", "product/in", "product/out", "product/scan", "temp"]
 	for i in subfolder:
-		os.system("mkdir -p %s/%s/%s" % (PROJECTROOT, project, i))
+		os.system("mkdir -p %s/%s/%s" % (ROOT, project, i))
 
 def setshot(project, shotname):
-	projd = PROJECTROOT +"/"+ project
+	projd = ROOT +"/"+ project
 	if not os.path.exists("%s/seq/%s" % (projd, shotname)):
 		subfolder = ["2d/wip", "2d/src", "3d", "plate"]
 		for i in subfolder:
@@ -28,8 +28,8 @@ def checkos():
 
 def projectlist():
 	rlist = []
-	for i in os.listdir(PROJECTROOT):
-		if os.path.isdir(PROJECTROOT +"/"+ i):
+	for i in os.listdir(ROOT):
+		if os.path.isdir(ROOT +"/"+ i):
 			rlist.append(i)
 	try:
 		rlist.remove("backup")
@@ -39,15 +39,15 @@ def projectlist():
 
 def seqlist(project):
 	rlist = []
-	for i in os.listdir("%s/%s/seq/" % (PROJECTROOT, project)):
-		if os.path.isdir("%s/%s/seq/%s" % (PROJECTROOT, project, i)):
+	for i in os.listdir("%s/%s/seq/" % (ROOT, project)):
+		if os.path.isdir("%s/%s/seq/%s" % (ROOT, project, i)):
 			rlist.append(i)
 	return rlist
 
 def filelist(project, seq, task):
 	flist = []
-	for i in os.listdir("%s/%s/seq/%s/%s" % (PROJECTROOT, project, seq, task)):
-		if os.path.isfile("%s/%s/seq/%s/%s/%s" % (PROJECTROOT, project, seq, task, i)):
+	for i in os.listdir("%s/%s/seq/%s/%s" % (ROOT, project, seq, task)):
+		if os.path.isfile("%s/%s/seq/%s/%s/%s" % (ROOT, project, seq, task, i)):
 			if i[0] == ".":
 				pass
 			elif "~" in i:
@@ -70,7 +70,7 @@ def rmdot(list):
 
 
 def selectproject():
-	projectlist = rmdot(os.listdir(PROJECTROOT))
+	projectlist = rmdot(os.listdir(ROOT))
 	menunum = 1
 	for i in projectlist:
 		if i[0] != ".":

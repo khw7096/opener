@@ -136,7 +136,7 @@ class Opener(Frame):
 		else:
 			self.file = sels[0]
 		self.update_path()
-		runfile = path.PROJECTROOT +"/"+ self.project + "/seq/" + self.shot +"/"+ self.task +"/"+ self.file
+		runfile = path.ROOT +"/"+ self.project + "/seq/" + self.shot +"/"+ self.task +"/"+ self.file
 		run.run(runfile)
 
 	def update_project(self):
@@ -156,8 +156,8 @@ class Opener(Frame):
 	
 	def update_path(self):
 		try:
-			self.pathvar.set("PATH : %s/%s/seq/%s/%s" % (path.PROJECTROOT, self.project, self.shot, self.task))
-			self.open_pathvar = "%s/%s/seq/%s/%s" % (path.PROJECTROOT, self.project, self.shot, self.task) 
+			self.pathvar.set("PATH : %s/%s/seq/%s/%s" % (path.ROOT, self.project, self.shot, self.task))
+			self.open_pathvar = "%s/%s/seq/%s/%s" % (path.ROOT, self.project, self.shot, self.task) 
 		except:
 			self.pathvar.set("Select Shot please~!")
 
