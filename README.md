@@ -1,6 +1,7 @@
 # opener
 - simple file managing tool for onset.
 - always testing version.
+- I'm using tkinter & pmw. because keep light weight dependency(I think big library pyqt for onset.)
 
 ## reference.
 - http://zetcode.com/gui/tkinter/dialogs
