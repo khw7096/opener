@@ -14,3 +14,7 @@ tar -zxvf Pmw-2.0.0.tar.gz
 cd Pmw-2.0.0
 sudo python setup.py install
 ```
+
+## install
+- install pmw
+- $ sh setup.sh
