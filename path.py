@@ -84,14 +84,5 @@ def selectproject():
 	print("Select %s." % (project))
 	return project
 
-def target_edlbackup():
-	if "backup" in projectlist():
-		pass
-	else:
-		setproject("backup")
-	backuppath = "%s/backup/product/in/%s" % (PROJECTROOT, time.strftime("%y%m%d"))
-	os.system("mkdir -p %s" % (backuppath))
-	return backuppath
-
 if __name__ == "__main__":
 	print seqlist("diamond")
