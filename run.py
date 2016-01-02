@@ -20,10 +20,9 @@ def run(filepath):
 		natronpath = "/Applications/Natron.app/Contents/MacOS/Natron"
 		excute("%s %s" % (natronpath, filepath))
 	elif ext == "mov":
-		djvpath = ""
-		pass
+		excute("open %s" % (filepath))
 	elif ext == "blend":
-		blenderpath = "%s/lazypic/application/osx/blender27/Blender/blender.app/Contents/MacOS/blender" % (os.path.expanduser("~"))
+		blenderpath = "/Application/Blender/blender.app/Contents/MacOS/blender"
 		excute("%s %s" % (blenderpath, filepath))
 	else:
 		pass
