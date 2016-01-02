@@ -18,14 +18,6 @@ def setshot(project, shotname):
 		os.system("touch %s/seq/%s/2d/%s" % (projd, shotname, shotname + "_comp_v01.nk"))
 		os.system("cp %s/initfile/init.blend %s/seq/%s/3d/%s" % (os.path.abspath(os.path.dirname(__file__)),projd, shotname, shotname + "_blender_v01.blend"))
 
-def checkos():
-	if sys.platform == 'linux2':
-		return "lin"
-	elif sys.platform == 'darwin':
-		return "osx"
-	else:
-		return "win"
-
 def projectlist():
 	rlist = []
 	for i in os.listdir(ROOT):
