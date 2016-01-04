@@ -9,7 +9,7 @@ def excute(cmd):
 	return fd.stdout, fd.stderr
 
 def run(filepath):
-	filepath, ext = os.path.splitext(filepath)
+	head, ext = os.path.splitext(filepath)
 	if ext == ".nk":
 		nukepath = "/Applications/Nuke6.3v4/Nuke6.3v4.app/Contents/MacOS/Nuke6.3v4 --nukex"
 		excute("%s %s" % (nukepath, filepath))
