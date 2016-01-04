@@ -69,7 +69,7 @@ class Opener(Frame):
 	def add_project(self):
 		t = Toplevel()
 		t.wm_title("Add Project")
-		t.geometry("290x80+300+300")
+		t.geometry("300x80+300+300")
 		field = Pmw.EntryField(t, labelpos=W, label_text="New Project : ")
 		ybutton = Button(t, text="Create", command=lambda: self.make_project(field.getvalue(), t))
 		nbutton = Button(t, text="Quit", command=lambda: self.onDeleteChild(t))
