@@ -50,30 +50,6 @@ def filelist(project, seq, task):
 		return flist	
 
 
-def rmdot(list):
-	nlist = []
-	for i in list:
-		if i[0] != ".":
-			nlist.append(i)
-		else:
-			pass
-	return nlist
-
-
-def selectproject():
-	projectlist = rmdot(os.listdir(ROOT))
-	menunum = 1
-	for i in projectlist:
-		if i[0] != ".":
-			print("%s. %s" % (menunum, i))
-			menunum = menunum + 1
-		else:
-			rmlist.append(i)
-	
-	projectnum = raw_input("Select Project(q:quit) : ")
-	project = projectlist[int(projectnum) - 1]
-	print("Select %s." % (project))
-	return project
 
 if __name__ == "__main__":
 	print seqlist("diamond")
