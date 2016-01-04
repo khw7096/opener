@@ -8,20 +8,17 @@ def excute(cmd):
 					stderr=subprocess.PIPE)
 	return fd.stdout, fd.stderr
 
-def getext(path):
-	return path.rsplit(".",1)[1]
-
 def run(filepath):
-	ext = getext(filepath)
-	if ext == "nk":
+	filepath, ext = os.path.splitext(filepath)
+	if ext == ".nk":
 		nukepath = "/Applications/Nuke6.3v4/Nuke6.3v4.app/Contents/MacOS/Nuke6.3v4 --nukex"
 		excute("%s %s" % (nukepath, filepath))
-	elif ext == "ntp":
+	elif ext == ".ntp":
 		natronpath = "/Applications/Natron.app/Contents/MacOS/Natron"
 		excute("%s %s" % (natronpath, filepath))
-	elif ext == "mov":
+	elif ext == ".mov":
 		excute("open %s" % (filepath))
-	elif ext == "blend":
+	elif ext == ".blend":
 		blenderpath = "/Application/Blender/blender.app/Contents/MacOS/blender"
 		excute("%s %s" % (blenderpath, filepath))
 	else:
