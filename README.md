@@ -6,14 +6,8 @@
 ## reference.
 - http://zetcode.com/gui/tkinter/dialogs
 
-## install
+## install OSX
 ```
-cd ~
-git clone https://github.com/khw7096/opener.git
-cd opener
-wget http://sourceforge.net/projects/pmw/files/Pmw-2.0.0.tar.gz
-tar -zxvf Pmw-2.0.0.tar.gz
-cd Pmw-2.0.0
-sudo python setup.py install
-sh ../setup.sh
+cd ~ && git clone https://github.com/khw7096/opener.git
+sh opener/setup.sh
 ```
