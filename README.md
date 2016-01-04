@@ -6,7 +6,7 @@
 ## install OSX
 ```
 cd ~ && git clone https://github.com/khw7096/opener.git
-sh opener/setup.sh
+cd opener && sh setup.sh
 ```
 
 ## reference.
