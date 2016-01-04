@@ -13,7 +13,7 @@ def setshot(project, shot):
 	initpath = "%s/initfile" % (os.path.abspath(os.path.dirname(__file__)))
 	shotpath = "%s/%s/seq/%s" % (ROOT, project, shot)
 	if not os.path.exists(shotpath):
-		sub = ["2d/wip", "2d/src", "3d", "plate"]
+		sub = ["2d/render", "2d/src", "3d", "plate"]
 		for i in sub:
 			os.system("mkdir -p %s/%s" % (shotpath, i))
 		os.system("touch %s/2d/%s_v01.nk" % (shotpath, shot))
