@@ -16,8 +16,8 @@ def setshot(project, shot):
 		sub = ["2d/wip", "2d/src", "3d", "plate"]
 		for i in sub:
 			os.system("mkdir -p %s/%s" % (shotpath, i))
-		os.system("touch %s/2d/%s" % (shotpath, shot + "_comp_v01.nk"))
-		os.system("cp %s/init.blend %s/3d/%s" % (initpath, shotpath, shot + "_blender_v01.blend"))
+		os.system("touch %s/2d/%s_v01.nk" % (shotpath, shot))
+		os.system("cp %s/init.blend %s/3d/%s_v01.blend" % (initpath, shotpath, shot))
 
 def projectlist():
 	rlist = []
