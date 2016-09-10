@@ -11,7 +11,7 @@ def excute(cmd):
 def run(filepath):
 	head, ext = os.path.splitext(filepath)
 	if ext == ".nk":
-		nukepath = "/Applications/Nuke9.0v8/Nuke9.0v8.app/Contents/MacOS/Nuke9.0v8 --nukex"
+		nukepath = "/Applications/Nuke10.0v3/Nuke10.0v3.app/Contents/MacOS/Nuke10.0v3 --nc --startx"
 		excute("%s %s" % (nukepath, filepath))
 	elif ext == ".ntp":
 		natronpath = "/Applications/Natron.app/Contents/MacOS/Natron"
