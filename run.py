@@ -9,20 +9,19 @@ def excute(cmd):
 	return fd.stdout, fd.stderr
 
 def run(filepath):
+        app = "open"
 	head, ext = os.path.splitext(filepath)
 	if ext == ".nk":
-		nukepath = "/Applications/Nuke10.0v3/Nuke10.0v3.app/Contents/MacOS/Nuke10.0v3 --nc --startx"
-		excute("%s %s" % (nukepath, filepath))
+		app = "/Applications/Nuke10.0v3/Nuke10.0v3.app/Contents/MacOS/Nuke10.0v3 --nc --startx"
+		excute("%s %s" % (app, filepath))
 	elif ext == ".ntp":
-		natronpath = "/Applications/Natron.app/Contents/MacOS/Natron"
-		excute("%s %s" % (natronpath, filepath))
-	elif ext == ".mov":
-		excute("open %s" % (filepath))
+		app = "/Applications/Natron.app/Contents/MacOS/Natron"
+		excute("%s %s" % (app, filepath))
 	elif ext == ".blend":
-		blenderpath = "/Application/Blender/blender.app/Contents/MacOS/blender"
-		excute("%s %s" % (blenderpath, filepath))
+		app = "/Application/Blender/blender.app/Contents/MacOS/blender"
+		excute("%s %s" % (app, filepath))
 	else:
-		pass
+		excute("%s %s" % (app, filepath))
 
 if __name__ == "__main__":
 	testfile = ""
